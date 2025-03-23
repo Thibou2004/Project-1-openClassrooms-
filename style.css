@@ -1,0 +1,644 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/*          Design système        */
+
+:root {
+  /*   font-family   */
+  --Raleway: Raleway, sans-serif;
+
+  /*   font size   */
+  --fs-22: 1.375rem;
+  --fs-18: 1.125rem;
+  --fs-17: 1.063rem;
+  --fs-16: 1rem;
+  --fs-14: 0.875rem;
+
+  /*   font weight   */
+  --bold: 700;
+  --regular: 400;
+
+  /*   color   */
+  --blue: #0065FC;
+  --sky-blue: #deebff;
+  --grey: #d9d9d9;
+  --lightgrey: #f2f2f2;
+  --black: #000;
+}
+
+/*  General  */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: var(--fs-16);
+    font-family: var(--Raleway);
+    font-weight: var(--regular);
+    padding: 0 50px;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    font-size: var(--fs-22);
+    font-weight: var(--bold);
+}
+
+h3 {
+    font-size: var(--fs-16);
+    font-weight: var(--bold)
+}
+
+.card {
+    display: flex;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0px 2px 15px rgb(0, 0, 0, 0.1);
+}
+
+a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+a, button {
+    font-family: var(--Raleway);
+}
+
+.card-link {
+    display: flex;
+}
+
+.card p {
+    font-size: var(--fs-14); 
+}
+
+.container {
+    display: flex;
+    gap: 30px;
+}
+
+.bold {
+    font-weight: var(--bold);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0; 
+}
+
+@media (max-width: 1024px) {
+    body {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+    
+    #hero-section, footer {
+        padding: 0 20px;
+    }
+
+    .container {
+        gap: 15px;
+    }
+}
+
+/*   header    */
+
+header {
+    padding-bottom: 35px;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 79px;
+  margin-bottom: 30px;
+}
+
+.company-logo {
+    height: 79px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.company-logo img {
+    width: 61px;
+    height: 19px;
+}
+
+.navigation {
+    width: 344px;
+    height: 35px;
+    align-self: flex-start;
+    display: flex;
+    justify-content: end;
+}
+
+.navigation a {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: end;
+}
+
+.navigation a::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 2px;
+    background-color: #0065FC;
+    opacity: 0;
+    width: 100%;
+}
+
+.navigation a:hover {
+    color: var(--blue)
+}
+
+.navigation a:hover::before {
+   opacity: 1;
+}
+
+.navigation a:first-of-type {
+  margin-right: 68px;
+}
+
+.hero-subtitle {
+    margin: 8px 0 35px;
+}
+
+.reserch-input-group {
+    display: flex;
+    height: 49px;
+    border: 1px solid var(--lightgrey);
+    width: max-content;
+    border-radius: 15px;
+}
+
+.location-logo {
+    background-color: var(--lightgrey);
+    width: 50px;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#reserch {
+    border: none;
+    width: 195px;
+    height: 100%;
+    padding: 14px 24px;
+    font-size: var(--fs-18);
+    font-weight: var(--bold);
+}
+
+.reserch-btn {
+    width: 132px;
+    height: 100%;
+    font-size: var(--fs-18);
+    font-weight: var(--bold);
+    background-color: var(--blue);
+    border: none;
+    color: #fff;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    cursor: pointer;
+}
+
+.icon-reserch {
+    display: none;
+}
+
+.filtres {
+    display: flex;
+    gap: 14.5px;
+    align-items: center;
+    margin: 35px 0;
+}
+
+.filtres h2 {
+    font-size: var(--fs-18);
+}
+
+.filtres-btn-container {
+    display: flex;
+    gap: 15px;
+}
+
+.filtre-btn {
+  background-color: #fff;
+  border-radius: 25px;
+  border: 2px solid var(--grey);
+  padding: 14px 19px;
+  font-weight: var(--bold);
+  font-size: var(--fs-17);
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.filtre-btn:hover {
+    background-color: var(--sky-blue);
+}
+
+.filtre-btn img {
+    margin-right: 10px;
+}
+
+.info-bar {
+    display: flex;
+    align-items: center;
+}
+
+.icon-info {
+    width: 24px;
+    height: 24px;
+    margin-right: 7px;
+    border-radius: 50%;
+    border: 1px solid var(--grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-info img {
+    width: 4px;
+    height: 10px;
+}
+
+@media (max-width: 1024px) {
+    .filtres {
+        gap: 20px;
+        flex-direction: column;
+        align-items: start;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: 115px;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .navigation {
+        width: 100%;
+        height: 36px;
+    }
+
+    .navigation a {
+        width: 50%;
+        align-items: start;
+        justify-content: center;
+    }
+
+    .navigation a:hover::before {
+        top: calc(100% - 2px);
+    }
+
+    .navigation a:first-of-type {
+        margin: 0;
+    }
+
+    .reserch-input-group {
+        width: 100%;
+    }
+
+    #reserch {
+        display: block;
+        max-width: 236px;
+        width: 100%;
+    }
+    
+    .reserch-btn {
+        width: 49px;
+        height: 49px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        box-shadow: 0px 4px 4px rgb(0, 0, 0, 0.25);
+    }
+
+    .icon-reserch {
+        display: block;
+    }
+
+    .reserch-text {
+        display: none;
+    }
+
+    .filtres-btn-container {
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .filtre-btn {
+      min-width: 162.5px;
+      font-size: var(--fs-14);
+    }
+}
+
+/*  main  */
+
+.housings-and-popularHousings {
+    display: flex;
+    gap: 40px;
+    min-height: 614px;
+    width: 100%;
+}
+
+.housings-and-popularHousings section {
+    background-color: var(--lightgrey);
+    border-radius: 15px;
+    padding: 30px;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+#housings-section {
+    width: 100%;
+    max-width: 871px;
+}
+
+main h2 {
+    margin: 0 0 30px;
+}
+
+.housings-container {
+    flex-wrap: wrap;
+    
+}
+
+.card-version-1 {
+    flex-direction: column;
+    width: 250px;
+    height: 207px;
+    padding-bottom: 15px;
+}
+
+.housing-picture {
+    object-fit: cover;
+}
+
+.card-version-1 .housing-picture {
+    margin: 4px;
+    width: calc(100% - 8px);
+    height: 124px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.card-version-1 .card-content {
+    padding: 0 15px;
+}
+
+.card-content h3, .card-content p {
+    margin-bottom: 8px;
+}
+
+.more-results {
+    display: block;
+    width: 100%;
+    text-align: start;
+    border: none;
+    font-size: var(--fs-18);
+    margin-top: 30px;
+    font-weight: var(--bold);
+}
+
+#popular-housings-section {
+  width: 429px;
+}
+
+#popular-housings-section h2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popular-housings-container {
+    flex-direction: column;
+}
+
+.card-version-2 {
+    width: 369px;
+    height: 146px;
+    padding: 5px;
+}
+
+.card-version-2 .housing-picture {
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    width: 123px;
+    height: (100% - 10px);
+    margin-right: 0px;
+}
+
+.card-version-2 .card-content {
+    padding: 10px 5px 5px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-version-2 .card-content .card-rating {
+    margin-top: auto;
+}
+
+#activities-section {
+    padding: 30px;
+    width: 100%;
+    max-width: 1340px;
+    height: 559px;
+    /* background-color: red; */
+    margin: 35px 0;
+}
+
+.activity-card {
+    width: 297.5px;
+    box-shadow: 0px 3px 15px rgb(0, 0, 0, 0.1);
+    border-radius: 20px;
+    height: 439px;
+}
+
+.content-activity-card {
+    width: 100%;
+    height: 59px;
+    padding: 19px;    
+}
+
+.activity-card img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.activities-container {
+  width: 100%;
+  line-height: 0.8rem;
+}
+
+@media (max-width: 1024px) {
+    .housings-and-popularHousings {
+        flex-direction: column;
+    }
+
+    #housings-section {
+        width: 100%;
+        max-width: 924px;
+        margin: 0 auto;
+    }
+
+    .housings-container {
+        justify-content: center;
+    }
+
+    .card-version-2 {
+        width: 274px;
+    }
+
+    #popular-housings-section {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .popular-housings-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    #activities-section {
+        height: 390px;
+    }
+    
+    .activity-card {
+        height: 270px;
+    }
+
+    .activity-card img {
+        height: 200px;
+    }
+    .content-activity-card {
+        height: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .housings-and-popularHousings {
+        flex-direction: column-reverse;
+        gap: 0;
+    }
+
+    #housings-section {
+        background-color: #fff;
+    }
+
+    .housings-and-popularHousings section {
+        border-radius: 0;
+        padding: 20px;
+    }
+
+    .card-link {
+        width: 100%;
+        max-width: 335px;
+
+    }
+
+    .card-version-1 {
+        width: 100%;
+        margin: 0 auto;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+
+    .popular-housings-container {
+        flex-direction: row;
+    } 
+
+    .card-version-2 {
+        width: 100%;
+        max-width: 350px;
+        min-width: 250px;
+        margin: 0 auto;
+        flex-grow: 1;
+    }
+
+    .more-results {
+        background-color: #fff;
+        margin-top: 15px;
+    }
+
+    main h2 {
+        margin-bottom: 20px;
+    }
+
+    #activities-section {
+        height: auto;
+    }
+
+    .activities-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .activity-card {
+        width: 100%;
+        max-width: 310px;
+        align-items: center;
+    }
+    
+}
+
+/*  Footer  */
+
+footer {
+    display: flex;
+    justify-content: stretch;
+    flex-wrap: wrap;
+    gap: 30px;
+    min-height: 163px;
+    background-color: var(--lightgrey);
+    padding: 20px;
+}
+
+footer section {
+    flex-grow: 1;
+    min-width: 110px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 163px;
+}
+
+
