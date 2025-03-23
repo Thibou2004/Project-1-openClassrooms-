@@ -172,12 +172,26 @@ header {
     width: 100%;
 }
 
-.navigation a:hover {
-    color: var(--blue)
+@media (hover: hover) {
+    .navigation a:hover {
+        color: var(--blue);
+    }
+
+    .navigation a:hover::before {
+        opacity: 1;
+    }
 }
 
-.navigation a:hover::before {
-   opacity: 1;
+@media (hover: none) {
+    .navigation a:active,
+    .navigation a:focus {
+        color: var(--blue);
+    }
+
+    .navigation a:active::before,
+    .navigation a:focus::before {
+        opacity: 1;
+    }
 }
 
 .navigation a:first-of-type {
@@ -381,13 +395,13 @@ header {
     background-color: var(--lightgrey);
     border-radius: 15px;
     padding: 30px;
-    flex-shrink: 1;
-    flex-grow: 1;
 }
 
 #housings-section {
     width: 100%;
     max-width: 871px;
+    flex-shrink: 1;
+    flex-grow: 1;
 }
 
 main h2 {
@@ -403,7 +417,7 @@ main h2 {
     flex-direction: column;
     min-width: 250px;
     width: 100%;
-    height: 207px;
+    min-height: 207px;
     padding-bottom: 15px;
 }
 
@@ -439,10 +453,13 @@ main h2 {
     font-size: var(--fs-18);
     margin-top: 30px;
     font-weight: var(--bold);
+    cursor: pointer;
 }
 
 #popular-housings-section {
   width: 429px;
+  flex-shrink: 0;
+  height: max-content;
 }
 
 #popular-housings-section h2 {
@@ -455,7 +472,7 @@ main h2 {
 }
 
 .card-version-2 {
-    min-width: 200px;
+    min-width: 280px;
     width: 100%;
     height: 146px;
     padding: 5px;
@@ -538,7 +555,6 @@ main h2 {
 
     .popular-housings-container .card-link {
         flex: 1 1 250px;
-        max-width: 400px;
         margin: 0 auto;
     }
     
