@@ -219,13 +219,19 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
+}
+
+.location-logo i {
+    font-size: 18px;
 }
 
 #reserch {
     border: none;
     width: 195px;
     height: 100%;
-    padding: 14px 24px;
+    /* padding: 14px 24px; */
+    padding: 14px 0 14px 24px;
     font-size: var(--fs-18);
     font-weight: var(--bold);
 }
@@ -241,10 +247,12 @@ header {
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .icon-reserch {
     display: none;
+    font-size: 17px;
 }
 
 .filtres {
@@ -280,8 +288,25 @@ header {
     background-color: var(--sky-blue);
 }
 
-.filtre-btn img {
+.filtre-btn i {
     margin-right: 10px;
+    color: var(--blue);
+}
+
+.filtre-btn:first-of-type i {
+    font-size: 16px;
+}
+
+.filtre-btn:nth-of-type(2) i {
+    font-size: 22px;
+}
+
+.filtre-btn:nth-of-type(3) i {
+    font-size: 18px;
+}
+
+.filtre-btn:nth-of-type(4) i {
+   font-size: 20px;
 }
 
 .info-bar {
@@ -298,11 +323,12 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 }
 
-.icon-info img {
-    width: 4px;
-    height: 10px;
+.icon-info i {
+    color: var(--blue);
+     font-size: 10px;
 }
 
 @media (max-width: 1024px) {
@@ -462,9 +488,20 @@ main h2 {
   height: max-content;
 }
 
-#popular-housings-section h2 {
+#popular-housings-section header {
     display: flex;
     justify-content: space-between;
+    padding: 0;
+    margin-bottom: 30px;
+}
+#popular-housings-section h2 {
+    margin: 0;
+}
+
+#popular-housings-section header i {
+    color: var(--blue);
+    font-size: 16px;
+    align-self: end;
 }
 
 .popular-housings-container {
@@ -482,7 +519,7 @@ main h2 {
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
     width: 123px;
-    height: (100% - 10px);
+    height: 100%;
     margin-right: 0px;
 }
 
@@ -494,6 +531,15 @@ main h2 {
 
 .card-version-2 .card-content .card-rating {
     margin-top: auto;
+}
+
+.card-rating i{
+    font-size: 13px;
+    color: var(--blue)
+}
+
+.card-rating i:last-of-type {
+    color: var(--lightgrey);
 }
 
 #activities-section {
@@ -598,6 +644,9 @@ main h2 {
     }
 
     main h2 {
+        margin-bottom: 20px;
+    }
+    #popular-housings-section header {
         margin-bottom: 20px;
     }
 
