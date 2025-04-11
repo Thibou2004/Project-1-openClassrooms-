@@ -52,7 +52,7 @@ h1, h2 {
 
 h3 {
     font-size: var(--fs-16);
-    font-weight: var(--bold)
+    font-weight: var(--bold);
 }
 
 .card {
@@ -98,12 +98,6 @@ a, button {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0; 
-}
-
-@media (max-width: 1024px) {
-    body {
-        padding: 0 30px;
-    }
 }
 
 @media (max-width: 768px) {
@@ -180,6 +174,10 @@ header {
     .navigation a:hover::before {
         opacity: 1;
     }
+
+    .filtre-btn:hover {
+        background-color: var(--sky-blue);
+    }
 }
 
 @media (hover: none) {
@@ -191,6 +189,10 @@ header {
     .navigation a:active::before,
     .navigation a:focus::before {
         opacity: 1;
+    }
+
+    .filtre-btn:active {
+        background-color: var(--sky-blue);
     }
 }
 
@@ -282,10 +284,6 @@ header {
   align-items: center;
   white-space: nowrap;
   cursor: pointer;
-}
-
-.filtre-btn:hover {
-    background-color: var(--sky-blue);
 }
 
 .filtre-btn i {
@@ -426,8 +424,6 @@ header {
 #housings-section {
     width: 100%;
     max-width: 871px;
-    flex-shrink: 1;
-    flex-grow: 1;
 }
 
 main h2 {
@@ -485,7 +481,7 @@ main h2 {
 #popular-housings-section {
   width: 429px;
   flex-shrink: 0;
-  height: max-content;
+  height: 641px;
 }
 
 #popular-housings-section header {
@@ -509,7 +505,7 @@ main h2 {
 }
 
 .card-version-2 {
-    min-width: 280px;
+    min-width: 274px;
     width: 100%;
     height: 146px;
     padding: 5px;
@@ -518,7 +514,9 @@ main h2 {
 .card-version-2 .housing-picture {
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
-    width: 123px;
+    min-width: 93px;
+    width: 100%;
+    max-width: 123px;
     height: 100%;
     margin-right: 0px;
 }
@@ -526,6 +524,7 @@ main h2 {
 .card-version-2 .card-content {
     padding: 10px 5px 5px 15px;
     display: flex;
+    flex: 1 0 183px;
     flex-direction: column;
 }
 
@@ -546,7 +545,6 @@ main h2 {
     padding: 30px;
     width: 100%;
     max-width: 1340px;
-    min-height: 559px;
     margin: 35px 0;
 }
 
@@ -579,17 +577,20 @@ main h2 {
 @media (max-width: 1024px) {
     .housings-and-popularHousings {
         flex-direction: column;
+        max-width: 924px;
+        margin: 0 auto;
     }
 
     #housings-section {
         width: 100%;
-        max-width: 924px;
+        max-width: none;
         margin: 0 auto;
     }
 
     #popular-housings-section {
         width: 100%;
         margin: 0 auto;
+        height: auto;
     }
 
     .popular-housings-container {
@@ -607,7 +608,7 @@ main h2 {
     .activity-card {
         height: 270px;
         width: 100%;
-        flex: 1 1 290px;
+        flex: 1 1 193px;
     }
 
     .activities-container {
