@@ -667,7 +667,7 @@ footer {
     display: flex;
     justify-content: stretch;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 50px;
     min-height: 163px;
     background-color: var(--lightgrey);
     padding: 20px;
@@ -678,16 +678,14 @@ footer section {
     min-width: 200px;
     display: flex;
     flex-direction: column;
-    height: 163px;
 }
 
-footer section * {
+footer section *:not(:last-child) {
     margin-bottom: 15px;
 }
 
 @media (max-width: 768px) {
     footer {
-        gap: 30px;
         padding: 30px;
     }
 }
